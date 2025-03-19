@@ -108,4 +108,5 @@ License
 # Independent Books Online - Website
 
 Here is a screenshot of the example front-end interface for the Independent Books Online website:
-<img src="https://github.com/macdonald0603/Independent-Books-Online/blob/main/assets/images/IBOscreenshot.jpg" alt="Website Screenshot" width="400"/>
+ <a href="https://github.com/macdonald0603/Independent-Books-Online/blob/main/assets/images/IBOscreenshot.jpg" alt="Website Screenshot" width="400" target="_blank">
+              <img src="architecturediagram-thumbnail.jpg" alt="Architecture Diagram" class="channel-thumbnail">
