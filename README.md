@@ -105,4 +105,11 @@ Clarify dependencies: If your project has specific software or libraries that ne
 
 Example Usage: You can also add example screenshots or code snippets showing how the app works, like how a user can search for a book or leave a review.
 
+# Independent Books Online - Website
+
+Here are some screenshots of the front-end interface for the Independent Books Online website:
+![Homepage](https://github.com/macdonald0603/JohnsProjects/blob/main/IBO%20Website/screenshot1.png)
+![Book Search](https://github.com/macdonald0603/JohnsProjects/blob/main/IBO%20Website/screenshot2.png)
+
+
 Let me know if you need more help with the specific details of your project!
