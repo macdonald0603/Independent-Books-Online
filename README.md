@@ -5,23 +5,37 @@
 - Introduction
 - Features
 - Technologies Used
+- Architecture Diagram
+- Website Example
 - Setup and Installation
-- Usage
-- License
+
 
 **Introduction**
-This project was primarilly a AWS 3-tiered architecture project, deployi in Dev,UAT,Prod, and focusing on hands on core AWS features, as well as Infrastructure as Code using Terraform.  
-Objective: Deploy a scalable AWS infrastructure using Terraform for Dev, UAT, and Prod environments. Each environment has specific AWS resources that align with its purpose.
+This project was primarilly a AWS 3-tiered architecture project, deploying in Dev,UAT,Prod, and focusing on hands on core AWS features, as well as Infrastructure as Code using Terraform. Deploy a scalable AWS infrastructure using Terraform for Dev, UAT, and Prod environments. Each environment has specific AWS resources that align with its purpose.
 
-    Dev
-    - AWS Elastic File System (EFS), CloudWatch Logs
-    - Shared storage for EC2 instances, monitoring
-    UAT
-    - Amazon ElastiCache (Redis), AWS Step Functions
-    - Caching & automated workflow testing
-    Prod
-    - AWS App Mesh, AWS Athena, AWS WAF
-    - Service-to-service networking, analytics, security
+### Dev
+- **AWS Elastic File System (EFS)**: Shared file storage for EC2 instances.
+- **AWS CloudWatch Logs**: Centralized logging and monitoring.
+
+### UAT
+- **Amazon ElastiCache (Redis)**: Caching to improve performance.
+- **AWS Step Functions**: Orchestration of automated workflows for testing.
+
+### Prod
+- **AWS App Mesh**: Service mesh for microservice networking.
+- **AWS Athena**: Query service for analytics on S3 data.
+- **AWS WAF**: Web Application Firewall for enhanced security.
+
+### Common Resources
+- **EC2 Instances** (multiple AZ and Auto Scaling to host services)
+- **EBS Volumes**
+- **Security Groups**
+- **VPC**, Subnets, Route Tables, and Gateways
+- **IAM Roles/Policies**
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+***The Company/Product Objective***
 
 The Independent Books Online project is an online platform that allows users to browse, purchase, and review books. The platform is designed to provide a seamless user experience with easy navigation and a variety of search options.  This front-end was just used as a model for the project.
 
@@ -32,81 +46,73 @@ The Independent Books Online project is an online platform that allows users to 
 - Shopping Cart: Add books to your cart and proceed to checkout.
 - Reviews: Users can leave reviews for books they've purchased.
 
-**Technologies Used**
+**Technologies To Be Used**
 - Frontend: HTML, CSS, JavaScript (or whatever you want to use)
 - Backend: Node.js, Python, or other technologies depending on your stack.
 - Database: AWS DynamoDB, MySQL, or any database technology used.
-- Infrastructure: AWS services (like EC2, S3, Lambda), Terraform for Infrastructure as Code.
+- Infrastructure: AWS services (like EC2, S3, Lambda), Terraform for Infrastructure as Code. Cloudfront (streaming, downloading)
 - Version Control: Git & GitHub.
 
-**Setup and Installation**
-Follow these steps to get your development environment set up:
 
-**Prerequisites**
-- Git: Install Git on your system if you haven't already.
-- Node.js / Python / Other: Make sure the required runtime for the backend is installed.
-- Terraform: For managing cloud infrastructure.
+### Architecture Diagram
 
-**Installation Steps**
-Clone the repository:
+[![Architecture Diagram Thumbnail](https://github.com/macdonald0603/Independent-Books-Online/raw/main/assets/architecturediagram-thumbnail.jpg)](https://github.com/macdonald0603/Independent-Books-Online/raw/main/assets/images/Independent%20Books%20Arch%20Diagram%20%20-%20Prod.pdf)
 
-bash
-Copy
-Edit
-git clone https://github.com/macdonald0603/Independent-Books-Online.git
-cd Independent-Books-Online
+---
 
-Install dependencies for the frontend and backend (if applicable):
-
-For Node.js:
-bash
-Copy
-Edit
-npm install
-
-For Python:
-bash
-Copy
-Edit
-pip install -r requirements.txt
-
-**Set up the cloud infrastructure** (if applicable):
-
-- Make sure you have Terraform installed.
-= Run the Terraform configuration to set up AWS resources:
-bash
-Copy
-Edit
-terraform init
-terraform apply
-Start the local development server:
-
-For Node.js (example):
-bash
-Copy
-Edit
-npm start
-For Python (example):
-
-bash
-Copy
-Edit
-python app.py
-Usage
-
-Open your browser and go to http://localhost:3000 (or the port you configured).
-You should see the homepage of the Independent Books Online platform.
-Start browsing books, adding them to your cart, and leaving reviews.
-
-License
-** just a test project ** This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-**Architecture Diagram**
-<img src="https://github.com/macdonald0603/Independent-Books-Online/blob/main/assets/images/Independent%20Books%20Arch%20Diagram%20%20-%20Prod.pdf" alt="Arch Diagram"/>
-
-# Independent Books Online - Website
+### Independent Books Online - Website
 
 Here is a screenshot of the example front-end interface for the Independent Books Online website:
- <a href="https://github.com/macdonald0603/Independent-Books-Online/blob/main/assets/images/IBOscreenshot.jpg" alt="Website Screenshot" width="400" target="_blank">
-              <img src="architecturediagram-thumbnail.jpg" alt="Architecture Diagram" class="channel-thumbnail">
+
+<img src="https://github.com/macdonald0603/Independent-Books-Online/raw/main/assets/images/IBOscreenshot.jpg" width="400" />
+
+---------------------------------------------------------------------------------------------------------------------------
+**Setup and Installation**
+
+Follow these steps to deploy these terraform files/resources in AWS:
+
+**Prerequisites**
+- AWS CLI: Configured with your AWS credentials (aws configure).
+- Terraform: Installed on your machine.
+- Git: Installed for cloning the repo.
+- VSCode: Installed, with the terminal ready to use.
+- Some items need pre-set-up in AWS (AWS buckets, Lambda Bucket & Function, some thought on subnets and variables)
+
+**Instalation Steps**
+     
+     1) Clone the Repo
+           git clone https://github.com/macdonald0603/Independent-Books-Online.git
+     2) Initialize Terraform
+           terraform init
+     3) Validate the Terraform files (optional but recommended)
+           terraform validate
+     4) Preview the execution plan
+           terraform plan
+     5) Apply the Terraform configuration to deploy resources
+           terraform apply
+
+This process will deploy the resources (EC2, EFS, VPC components, etc.) across Dev, UAT, and Prod environments, based on the files in each corresponding directory.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+**License**
+MIT License
+
+Copyright (c) 2025 John MacDonald
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
