@@ -10,8 +10,8 @@
 - License
 
 **Introduction**
-This project was primarilly a AWS 3-tiered architecture project, and using terraform to deploy the projects in Dev,UAT,Prod.  
-Objective: Deploy a scalable AWS infrastructure using Terraform for Dev, UAT, and Prod environments. Each environment will have specific AWS resources that align with its purpose.
+This project was primarilly a AWS 3-tiered architecture project, deployi in Dev,UAT,Prod, and focusing on hands on core AWS features, as well as Infrastructure as Code using Terraform.  
+Objective: Deploy a scalable AWS infrastructure using Terraform for Dev, UAT, and Prod environments. Each environment has specific AWS resources that align with its purpose.
 
     Dev
     - AWS Elastic File System (EFS), CloudWatch Logs
@@ -23,11 +23,10 @@ Objective: Deploy a scalable AWS infrastructure using Terraform for Dev, UAT, an
     - AWS App Mesh, AWS Athena, AWS WAF
     - Service-to-service networking, analytics, security
 
-The Independent Books Online project is an online platform that allows users to browse, purchase, and review books. The platform is designed to provide a seamless user experience with easy navigation and a variety of search options.
+The Independent Books Online project is an online platform that allows users to browse, purchase, and review books. The platform is designed to provide a seamless user experience with easy navigation and a variety of search options.  This front-end was just used as a model for the project.
 
-This repository contains all the code required to run the platform, including the front-end and back-end components. It leverages technologies such as AWS, Terraform, and more.
 
-**Features**
+**Features for Website** <-- Not included in code as of yet
 - User Accounts: Register and log in to the platform.
 - Book Search: Search for books by title, author, or genre.
 - Shopping Cart: Add books to your cart and proceed to checkout.
@@ -102,6 +101,9 @@ Start browsing books, adding them to your cart, and leaving reviews.
 License
 ** just a test project ** This project is licensed under the MIT License - see the LICENSE file for details.
 
+
+**Architecture Diagram**
+<img src="https://github.com/macdonald0603/Independent-Books-Online/blob/main/assets/images/Independent%20Books%20Arch%20Diagram%20%20-%20Prod.pdf" alt="Arch Diagram"/>
 
 # Independent Books Online - Website
 
